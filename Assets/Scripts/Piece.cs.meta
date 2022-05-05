@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dc4bb91ad823046859446d472c5a50a4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - currentTile: {instanceID: 0}
+  - previousTile: {instanceID: 0}
+  - scpt: {fileID: 11400000, guid: 9c9190cbc6da74e149000c9ee726470d, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
