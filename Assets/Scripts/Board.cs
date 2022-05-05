@@ -4,78 +4,61 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
+    [SerializeField] GameManager gm;
 
+    [Header("Board parameters")]
     public int width;
     public int height;
 
-    public Vector2Int mousePos;
+    [SerializeField]
+    private Color lightTile, darkTile;
 
-    public Color light_tile;
-    public Color dark_tile;
+    [Header("Tile prefab")]
+    [SerializeField]
+    private GameObject tile_p;
 
-    private Color tile_color;
+    // this 2D array will store all Tiles
+    public Tile[,] tiles;
 
-    public GameObject tile_p;
-
-    private Camera cam;
-
-    void Setup()
+    public void Setup()
     {
+        // initialize tiles 2D array
+        tiles = new Tile[width, height];
+
+        // store a couple of vars for coloring tiles
         bool is_light = true;
+        Color tile_color;
+
         // spawn a grid of "tile_p" prefabs
         for (int j = 0; j < height; j++)
         {
             for (int i = 0; i < width; i++)
             {
+                // create prefab
                 GameObject newTile = Instantiate(tile_p, new Vector3(i - (width/2f) + 0.5f, j - (height / 2f) + 0.5f, 0), Quaternion.identity);
                 newTile.transform.parent = this.transform;
-                if (is_light)
-                {
-                    tile_color = light_tile;
-                }
-                else
-                {
-                    tile_color = dark_tile;
-                }
 
+                // assign tile color
+                if (is_light) { tile_color = lightTile; }
+                else { tile_color = darkTile; }
                 newTile.GetComponent<SpriteRenderer>().color = tile_color;
-                is_light = !is_light;
 
+                // store tile info in Tile object
                 Tile tile = newTile.GetComponent<Tile>();
                 tile.coord = new Vector2Int(i, j);
                 tile.id = BoardTools.CoordToName(tile.coord);
-
                 newTile.name = tile.id;
+
+                // finally, store the Tile in the 2D array of board
+                tiles[i, j] = tile;
+
+                // next 2 lines provide right alternance of color
+                is_light = !is_light; 
             }
-            is_light = !is_light;
-        }
-        
+            if (width % 2 == 0) { is_light = !is_light; }
+            
+        }  
     }
-
-
-    public Vector2Int MouseToCoord(Vector2 mousePos)
-    {
-
-        Vector2 offsetMousePos = (mousePos + new Vector2(width/2f - 0.5f , height / 2f - 0.5f));
-        int coordCellX = Mathf.RoundToInt(offsetMousePos.x);
-        int coordCellY = Mathf.RoundToInt(offsetMousePos.y);
-        return new Vector2Int(coordCellX, coordCellY);
-    }
-
-
-    private void Start()
-    {
-        cam = Camera.main;
-        Setup();
-    }
-
-
-    private void Update()
-    {
-        mousePos = MouseToCoord(cam.ScreenToWorldPoint(Input.mousePosition));
-    }
-
-
 
 
 

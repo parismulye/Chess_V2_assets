@@ -6,4 +6,5 @@ public class Tile : MonoBehaviour
 {
     public string id;
     public Vector2Int coord;
+    public Piece currentPiece;
 }
