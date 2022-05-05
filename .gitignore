@@ -4,3 +4,6 @@ Packages/**
 ProjectSettings/**
 UserSettings/**
 .DS_Store
+*.csproj
+*.sln
+*.meta
