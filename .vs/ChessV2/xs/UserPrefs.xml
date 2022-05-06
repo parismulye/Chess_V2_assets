@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{A895A492-59C9-9520-26A7-B2A913A749AE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BoardTools.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CustomInspector/GMEditor.cs">
     <Files>
-      <File FileName="Assets/Scripts/BoardTools.cs" Line="54" Column="10" />
+      <File FileName="Assets/Scripts/BoardTools.cs" Line="32" Column="58" />
       <File FileName="Assets/Scripts/Piece.cs" Line="11" Column="45" />
-      <File FileName="Assets/Scripts/InputSystem.cs" Line="46" Column="57" />
-      <File FileName="Assets/Scripts/PieceManager.cs" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/InputSystem.cs" />
+      <File FileName="Assets/Scripts/PieceManager.cs" Line="66" Column="47" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="18" Column="59" />
+      <File FileName="Assets/Scripts/Board.cs" />
+      <File FileName="Assets/Scripts/CustomInspector/GMEditor.cs" Line="3" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,8 +15,9 @@
           <Node name="ChessV2" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="CustomInspector" expanded="True" />
-                <Node name="BoardTools.cs" selected="True" />
+                <Node name="CustomInspector" expanded="True">
+                  <Node name="GMEditor.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -24,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c4d1b79c-9a02-4385-be3b-bc472e0a4b26" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a0969172-cfb7-4a6c-8797-b5f5e907b45b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

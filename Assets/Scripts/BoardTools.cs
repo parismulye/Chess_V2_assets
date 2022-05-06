@@ -29,30 +29,27 @@ public static class BoardTools
         int Nlines = FENsplit.Length;
         if (Nlines != board.height)
         {
-            Debug.Log("FEN Reader ERROR: incomplete FEN data");
+            Debug.Log("FEN Reader ERROR: check FEN format");
         }
-        // parse through lines:
-        for (int j = 0; j < Nlines; j++)
+            // parse through lines:
+            for (int j = 0; j < Nlines; j++)
         {
             int i = 0;
-            foreach(char s in FENsplit[j])
+            foreach (char c in FENsplit[j])
             {
                 try
                 {
-                    int add = int.Parse(s + "");
+                    int add = int.Parse(c + "");
                     i += add;
                 }
                 catch (FormatException)
                 {
-                    string pieceName = s + "";
+                    string pieceName = c + "";
                     pieces[i, j] = pieceName;
                     i += 1;
-
                 }
-
             }
         }
-
         return pieces;
     }
 }

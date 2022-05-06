@@ -12,6 +12,7 @@ public class PieceManager : MonoBehaviour
     public Piece rook2;
 
 
+
     public void ComputeAction(Piece activePiece, Tile targetTile)
     {
         // first, check if the target tile is in the set of legal moves
@@ -62,6 +63,6 @@ public class PieceManager : MonoBehaviour
     {
         // TEST LINES: PLACE ROOKS FOR TESTING
         rook1.Initialize("w", board.tiles[0, 0]);
-        rook2.Initialize("b", board.tiles[4, 4]);
+        rook2.Initialize("b", board.tiles[2, 2]);
     }
 }
