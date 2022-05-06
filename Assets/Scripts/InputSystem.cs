@@ -44,7 +44,6 @@ public class InputSystem : MonoBehaviour
                 activePiece.Activate();
 
                 // highlight legal tiles on the board...
-
             }
         }
 
@@ -64,12 +63,8 @@ public class InputSystem : MonoBehaviour
                 pm.ComputeAction(activePiece, targetTile);
                 activePiece.Deactivate();
                 activePiece = null;
-            }
-            
+            }   
         }
-
-
-
     }
 
 

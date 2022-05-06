@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Board : MonoBehaviour
@@ -19,10 +17,14 @@ public class Board : MonoBehaviour
 
     // this 2D array will store all Tiles
     public Tile[,] tiles;
-    
+
+    public string[,] pieces = new string[3, 3];                                 // TESTING SHIT HERE
 
     public void Setup()
     {
+        pieces = BoardTools.ReadFEN("rrr/sss/ppp", this);                       // TESTING SHIT HERE
+
+        ResetBoard();
         // initialize tiles 2D array
         tiles = new Tile[width, height];
 
@@ -62,6 +64,12 @@ public class Board : MonoBehaviour
     }
 
 
-
+    public void ResetBoard()
+    {
+        for (int i = this.transform.childCount; i > 0; --i)
+        {
+            DestroyImmediate(this.transform.GetChild(0).gameObject);
+        }
+    }
 
 }
