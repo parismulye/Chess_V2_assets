@@ -6,6 +6,7 @@ public class InputSystem : MonoBehaviour
 {
     [SerializeField] GameManager gm;
     [SerializeField] Board board;
+    [SerializeField] PieceManager pm;
 
     private Camera cam;
     private Vector2 mousePos;
@@ -34,7 +35,6 @@ public class InputSystem : MonoBehaviour
         // when I click down on mouse:
         if (Input.GetMouseButtonDown(0))
         {
-            // Get tile under mouse
             startingTile = GetTile(mouseCoord);
             
             // if there is a piece:
@@ -42,16 +42,9 @@ public class InputSystem : MonoBehaviour
             {
                 activePiece = startingTile.currentPiece;
                 activePiece.Activate();
-                
 
                 // highlight legal tiles on the board...
-            }
 
-            // else if cell is empty
-            else
-            {
-                // cancel any active piece and do nothing
-                activePiece = null;
             }
         }
 
@@ -65,10 +58,12 @@ public class InputSystem : MonoBehaviour
         // when I release the mouse:
         if (Input.GetMouseButtonUp(0))
         {
+            targetTile = GetTile(mouseCoord);
             if (activePiece)
             {
-                // capture etc...
+                pm.ComputeAction(activePiece, targetTile);
                 activePiece.Deactivate();
+                activePiece = null;
             }
             
         }

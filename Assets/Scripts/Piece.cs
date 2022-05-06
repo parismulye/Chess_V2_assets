@@ -25,26 +25,24 @@ public abstract class Piece : MonoBehaviour
 {
     // ATTRIBUTES:
     public string color = "";
-    public List<Tile> legalMoves = new();
+    public List<Tile> legalTiles = new();
     public Tile currentTile;
     public Tile previousTile;
 
-
-    // METHODS:
-    public void Setup(string teamColor, Tile initialTile)
-    {
-        color = teamColor;
-        MoveTo(initialTile);
-    }
+    Board board;
 
     public void MoveTo(Tile newTile)
     {
-        // update this object attributes:
+        // update previous tile
         previousTile = currentTile;
-        currentTile = newTile;
+        previousTile.currentPiece = null;
 
-        // update attributes of the argument Tile object:
+        // update current tile
+        currentTile = newTile;
         newTile.currentPiece = this;
+
+        // update position of the game object:
+        transform.position = newTile.transform.position;
     }
 
     public void Activate()
@@ -58,4 +56,37 @@ public abstract class Piece : MonoBehaviour
         transform.localScale = Vector3.one;
 
     }
+
+    public void CancelMovement()
+    {
+        transform.position = currentTile.transform.position;
+    }
+
+
+    public void Capture(Piece targetPiece)
+    {
+        MoveTo(targetPiece.currentTile);
+        targetPiece.gameObject.SetActive(false);
+    }
+
+
+
+    public void Initialize(string teamColor, Tile newTile)
+    {
+        color = teamColor;
+
+        // update previous tile
+        previousTile = newTile;
+        previousTile.currentPiece = this;
+
+        // update current tile
+        currentTile = newTile;
+        newTile.currentPiece = this;
+
+        // update position of the game object:
+        transform.position = newTile.transform.position;
+
+
+    }
+
 }
