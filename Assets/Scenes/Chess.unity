@@ -239,7 +239,7 @@ MonoBehaviour:
   gm: {fileID: 1338476718}
   board: {fileID: 2110753026}
   input: {fileID: 2051320683}
-  rook: {fileID: 1417486224328276678}
+  rook: {fileID: 4212005963874135460}
 --- !u!4 &1296076983
 Transform:
   m_ObjectHideFlags: 0
@@ -398,22 +398,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1417486224328276678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4212005963874135457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17b285115a09b4da0b0054b6fcc346a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: w
-  legalMoves: []
-  currentTile: {fileID: 0}
-  previousTile: {fileID: 0}
 --- !u!1 &4212005963874135457
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4212005963874135458}
   - component: {fileID: 4212005963874135459}
-  - component: {fileID: 1417486224328276678}
+  - component: {fileID: 4212005963874135460}
   m_Layer: 0
   m_Name: Piece
   m_TagString: Untagged
@@ -499,3 +483,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4212005963874135460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212005963874135457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b285115a09b4da0b0054b6fcc346a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: w
+  legalMoves: []
+  currentTile: {fileID: 0}
+  previousTile: {fileID: 0}
+  pieceType: {fileID: 0}
+  sprite: {fileID: 21300000, guid: d4eacb005d76a4300acda1b5932970ca, type: 3}
+  pieceName: r
+  moves: []
+  health: 5

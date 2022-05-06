@@ -8,7 +8,7 @@ public class PieceManager : MonoBehaviour
     public Board board;
     [SerializeField] InputSystem input;
 
-    public Rook rook;
+    public Piece rook;
 
     private void Start()
     {

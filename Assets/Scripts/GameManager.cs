@@ -10,6 +10,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // run the Setup function of the board: create the board
-        board.Setup();        
+        board.Setup();
     }
 }
