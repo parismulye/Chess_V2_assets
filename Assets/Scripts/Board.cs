@@ -18,7 +18,6 @@ public class Board : MonoBehaviour
     // this 2D array will store all Tiles
     public Tile[,] tiles;
 
-    
 
     public void Setup()
     {

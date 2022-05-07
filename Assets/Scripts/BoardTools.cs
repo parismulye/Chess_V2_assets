@@ -45,8 +45,16 @@ public static class BoardTools
                 catch (FormatException)
                 {
                     string pieceName = c + "";
-                    pieces[i, j] = pieceName;
-                    i += 1;
+                    try
+                    {
+                        pieces[i, j] = pieceName;
+                        i += 1;
+                    }
+                    catch (IndexOutOfRangeException)
+                    {
+                        Debug.Log("FEN Reader ERROR: check FEN format");
+                    }
+                    
                 }
             }
         }

@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Board")]
     public Board board;
+    public PieceManager pm;
 
     [TextArea]
     [Tooltip("Provide initial position in FEN format")]
@@ -18,5 +19,7 @@ public class GameManager : MonoBehaviour
 
         // generate a 2D array of strings of the current initial position
         string[,] pieces = BoardTools.ReadFEN(FEN, board);
+
+        pm.CreatePieces(pieces, board);
     }
 }

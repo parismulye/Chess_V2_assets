@@ -21,7 +21,7 @@ using UnityEngine;
  *              By doing, this the move action is completed only by calling piece.Move(someTile) and all attributes are updated at once.
  */
 
-public abstract class Piece : MonoBehaviour
+public class Piece : MonoBehaviour
 {
     // ATTRIBUTES:
     public string color = "";
@@ -29,7 +29,7 @@ public abstract class Piece : MonoBehaviour
     public Tile currentTile;
     public Tile previousTile;
 
-    Board board;
+    public PieceType pieceType;
 
     public void MoveTo(Tile newTile)
     {
@@ -85,6 +85,9 @@ public abstract class Piece : MonoBehaviour
 
         // update position of the game object:
         transform.position = newTile.transform.position;
+
+        // assign sprite from SO
+        GetComponent<SpriteRenderer>().sprite = pieceType.sprite_w;
 
 
     }
