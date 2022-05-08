@@ -71,9 +71,10 @@ public class Piece : MonoBehaviour
 
 
 
-    public void Initialize(string teamColor, Tile newTile)
+    public void Initialize(string teamColor, PieceType pieceType, Tile newTile)
     {
         color = teamColor;
+        Sprite sprite;
 
         // update previous tile
         previousTile = newTile;
@@ -87,7 +88,11 @@ public class Piece : MonoBehaviour
         transform.position = newTile.transform.position;
 
         // assign sprite from SO
-        GetComponent<SpriteRenderer>().sprite = pieceType.sprite_w;
+        if (teamColor == "w") {sprite = pieceType.sprite_w; }
+        else { sprite = pieceType.sprite_b; }
+
+        GetComponent<SpriteRenderer>().sprite = sprite;
+ 
 
 
     }

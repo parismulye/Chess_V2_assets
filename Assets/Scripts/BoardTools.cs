@@ -24,6 +24,7 @@ public static class BoardTools
 
     public static string[,] ReadFEN(string FEN, Board board)
     {
+        string teamColor = "_w";
         string[,] pieces = new string[board.width, board.height];
         string[] FENsplit = FEN.Split('/');
         int Nlines = FENsplit.Length;
@@ -37,6 +38,11 @@ public static class BoardTools
             int i = 0;
             foreach (char c in FENsplit[j])
             {
+                if (c + "" == "-")
+                {
+                    teamColor = "_b";
+                    continue;
+                }
                 try
                 {
                     int add = int.Parse(c + "");
@@ -44,19 +50,20 @@ public static class BoardTools
                 }
                 catch (FormatException)
                 {
-                    string pieceName = c + "";
+                    string pieceName = c + teamColor;
                     try
                     {
                         pieces[i, j] = pieceName;
                         i += 1;
+                        
                     }
                     catch (IndexOutOfRangeException)
                     {
                         Debug.Log("FEN Reader ERROR: check FEN format");
-                    }
-                    
+                    }                    
                 }
             }
+            
         }
         return pieces;
     }

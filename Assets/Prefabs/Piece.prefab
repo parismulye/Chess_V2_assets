@@ -101,4 +101,4 @@ MonoBehaviour:
   legalTiles: []
   currentTile: {fileID: 0}
   previousTile: {fileID: 0}
-  pieceType: {fileID: 11400000, guid: c6e3b1aabbf1e4efca07c6b1ecebc163, type: 2}
+  pieceType: {fileID: 0}

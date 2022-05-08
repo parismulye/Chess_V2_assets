@@ -8,4 +8,10 @@ public class PieceType : ScriptableObject
     public string key;
     public Sprite sprite_w;
     public Sprite sprite_b;
+
+    public bool slideMoves;
+    bool coordMoves;
+    bool specialMoves;
+
+    public Vector3Int slideMovesList;
 }

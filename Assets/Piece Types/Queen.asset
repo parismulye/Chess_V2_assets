@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 440038c1803924d8aba5c48a09157927, type: 3}
-  m_Name: Rook
+  m_Name: Queen
   m_EditorClassIdentifier: 
-  key: r
-  sprite_w: {fileID: 21300000, guid: a1a10542c8cd64693aa6bd24f775a24d, type: 3}
-  sprite_b: {fileID: 21300000, guid: 844a1a3e04cf14b918e2d9f31eb33520, type: 3}
-  slideMoves: 1
+  key: 
+  sprite_w: {fileID: 21300000, guid: ddb89427470e5465ab8edbba003b5581, type: 3}
+  sprite_b: {fileID: 21300000, guid: 8c2a4e31b23294c3c96880096df94a27, type: 3}
+  slideMoves: 0
   slideMovesList: {x: 0, y: 0, z: 0}

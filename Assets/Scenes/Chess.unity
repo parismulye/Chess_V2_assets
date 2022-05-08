@@ -4748,6 +4748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1296076983}
   - component: {fileID: 1296076982}
+  - component: {fileID: 1296076984}
   m_Layer: 0
   m_Name: Piece Manager
   m_TagString: Untagged
@@ -4771,6 +4772,7 @@ MonoBehaviour:
   board: {fileID: 2110753026}
   input: {fileID: 2051320683}
   piece_p: {fileID: 4212005964817049018, guid: 0a42fb3f6d7434640b4f0f67b31c603b, type: 3}
+  pieceCollector: {fileID: 1296076984}
 --- !u!4 &1296076983
 Transform:
   m_ObjectHideFlags: 0
@@ -4786,6 +4788,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1296076984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296076981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0f5e53a773c40ad8844137e13e4c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missingPiece: {fileID: 11400000, guid: e5d146e88d3aa498caf7aac53409d861, type: 2}
+  pieceTypes:
+  - {fileID: 11400000, guid: 6a139468165024d019e63bb18eaef213, type: 2}
+  - {fileID: 11400000, guid: cf7dcd64e0c4844598bfd16028c40215, type: 2}
+  - {fileID: 11400000, guid: b6bd79116c6764a8185cea382a94adc0, type: 2}
+  - {fileID: 11400000, guid: a584ecc4d2c5846c987dc08131c86018, type: 2}
+  - {fileID: 11400000, guid: c6e3b1aabbf1e4efca07c6b1ecebc163, type: 2}
+  - {fileID: 11400000, guid: a3d057af9ba284e3a93c6cbee4841dc1, type: 2}
 --- !u!1 &1315917887
 GameObject:
   m_ObjectHideFlags: 0
@@ -4917,7 +4939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 2110753026}
   pm: {fileID: 1296076982}
-  FEN: pppppppp/rrrrrrrr/8/8/8/8/rrrrrrrr/pppppppp
+  FEN: rnbqkbnr/pppppppp/8/8/-8/8/pppppppp/rnbqkbnr
 --- !u!4 &1338476719
 Transform:
   m_ObjectHideFlags: 0
@@ -6612,7 +6634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 1338476718}
-  width: 7
+  width: 8
   height: 8
   lightTile: {r: 1, g: 1, b: 1, a: 1}
   darkTile: {r: 0.14667143, g: 0.19541976, b: 0.3018868, a: 1}

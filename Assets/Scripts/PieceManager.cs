@@ -11,7 +11,8 @@ public class PieceManager : MonoBehaviour
 
     public GameObject piece_p;
 
-
+    [SerializeField]
+    private PieceCollector pieceCollector;
 
     public void ComputeAction(Piece activePiece, Tile targetTile)
     {
@@ -65,9 +66,13 @@ public class PieceManager : MonoBehaviour
         {
             for (int i = 0; i < board.width; i++)
             {
-                var key = pieces[i, j];
-                if (key != null)
+                string key_whole = pieces[i, j];
+
+                if (key_whole != null)
                 {
+                    string[] key_arr = key_whole.Split("_");
+                    string key = key_arr[0];
+                    string teamColor = key_arr[1];
                     // create a GameObject for the piece
                     GameObject newPieceObject = Instantiate(piece_p);
                     newPieceObject.transform.SetParent(transform);
@@ -80,8 +85,10 @@ public class PieceManager : MonoBehaviour
                     newPieceObject.name = key;
                     Piece piece = newPieceObject.GetComponent<Piece>();
 
-                    // HERE assign now the right SO file
-                    piece.Initialize("w", board.tiles[i, j]);
+                    // Get the SO of the piece
+                    PieceType pieceType = pieceCollector.FetchPieceType(key);
+
+                    piece.Initialize(teamColor, pieceType, board.tiles[i, j]);
                 }
             }
         }
